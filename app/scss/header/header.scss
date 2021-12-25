@@ -1,0 +1,23 @@
+.header {
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: $white;
+  transition: all .3s;
+  z-index: 1000;
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .3s;
+    padding: 40px 0 30px;
+  }
+  &.fixed {
+    position: fixed;
+    box-shadow: 0 0 4px 0px #0566ff;
+    .header__inner {
+      padding: 20px 0;
+    }
+  }
+  
+}

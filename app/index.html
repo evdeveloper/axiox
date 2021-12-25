@@ -2,43 +2,381 @@
 <html lang="ru">
 
 <head>
-
 	<meta charset="utf-8">
-	<!-- <base href="/"> -->
-
-	<title>OptimizedHTML 4</title>
+	<title>axiox</title>
 	<meta name="description" content="">
-
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
-	<!-- Template Basic Images Start -->
 	<meta property="og:image" content="path/to/image.jpg">
 	<link rel="icon" href="img/favicon/favicon.ico">
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
-	<!-- Template Basic Images End -->
-	
-	<!-- Custom Browsers Color Start -->
 	<meta name="theme-color" content="#000">
-	<!-- Custom Browsers Color End -->
-
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
 	<link rel="stylesheet" href="css/main.min.css">
 
 </head>
 
 <body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <div class="header__logo logo">
+            <img src="img/logo.svg" alt="Axiox">
+          </div>
+          <nav class="header__menu menu">
+            <a href="#">О нас</a>
+            <a href="#">Axiox</a>
+            <a href="#">Статьи</a>
+            <a href="#">Бизнес</a>
+            <a href="#">Поддержка</a>
+            <a href="#">Новости</a>
+            <a href="#">Франшиза</a>
+          </nav>
+          <button type="button" class="Button">Связаться с нами</button>
+        </div>
+      </div>
+      
+    </header>
 
-	<header>
-	   <div class="logo">
-	   	<img src="img/ico/logo.svg" alt="">
-	   </div>
-	   <div class="top_menu"></div>
-	   <button>Связаться с нами</button>
-	   
-	</header>
-	<main></main>
-	<footer></footer>
+    
+   
+   <!-- Content -->
+    <main class="content">
+      <section class="s-about">
+        <div class="container">
+          <div class="about__inner">
+            <div class="about__col">
+              <h1>axiox</h1>
+              <div class="about__text">Личный электрик, помощник и консультант</div>
+              <p>Сдает отчеты о потреблении, анализирует качество электричества, снижает аварийность, экономит на оплате электроэнергии до 35%</p>
+              <button type="button" class="Button Button--big">Связаться с нами</button>
+            </div>
+            <!-- <div class="about__col">
+              <img src="img/banner.png" alt="banner">
+            </div> -->
+          </div>
+        </div>
+      </section>
+      <section class="s-solution">
+        <div class="container">
+          <h2 class="title-center">Проблемы которые решает axiox</h2>
+          <div class="solution">
+            <div class="row">
+              <div class="col-md-3">
+                <img src="img/solution/4.svg" alt="Сложность в получении информации">
+                <b>Сложность в получении информации</b>
+                <p>о состоянии оборудования в режиме реального времени</p>
+              </div>
+              <div class="col-md-3">
+                <img src="img/solution/3.svg" alt="Тестирование оборудования">
+                <b>Тестирование оборудования</b>
+                <p>отсутствие постоянного проверочного тестирования оборудования</p>
+              </div>
+              <div class="col-md-3">
+                <img src="img/solution/2.svg" alt="Сложная коммуникация">
+                <b>Сложная коммуникация</b>
+                <p>между обслуживающей организаций и заказчиком</p>
+              </div>
+              <div class="col-md-3">
+                <img src="img/solution/1.svg" alt="Отсутствие удаленного управления">
+                <b>Отсутствие удаленного управления</b>
+                <p>отсутствие единого ПО удаленного управления электросетью</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="s-video">
+        <div class="video">
 
+        </div>
+      </section>
+      <section class="s-options">
+        <div class="container">
+          <h2 class="title-center">Вы получаете от axios</h2>
+          <div class="options">
+            <div class="options__inner">
+              <div class="options__item">
+                <div class="options__title">Защита от короткого замыкания</div>
+                <p>Защита от КЗ и контроль сопротивления изоляции, защита от скачков тока</p>
+              </div>
+            
+              <div class="options__item">
+                <div class="options__title">Приложение</div>
+                <p>Адаптивная система удаленного управления</p>
+              </div>
+            
+              <div class="options__item">
+                <div class="options__title">Диагностика</div>
+                <p>Диагностика оборудования электропроводки вышки и систем защиты в реальном времени</p>
+              </div>
+            
+              <div class="options__item">
+                <div class="options__title">Интеллектуальная настройка</div>
+                <p>Настраиваемые пороги потребления тока на каждом выводе и интеллектуальный счетчик</p>
+              </div>
+
+              <div class="options__item options--blue">
+                <img src="img/logo-white.svg" alt="logo">
+              </div>
+            
+              <div class="options__item">
+                <div class="options__title">Диспетчеризация</div>
+                <p>Передача данных и аварийное предупреждение на пост диспетчера, удаленное управление электроснабжением</p>
+              </div>
+            
+              <div class="options__item">
+                <div class="options__title">Сбор отчетности</div>
+                <p>Статистика, графики и исторические данные</p>
+              </div>
+
+              <div class="options__item">
+                <div class="options__title">Распределение мощности</div>
+                <p>Распределение энергоподачи на часы минимальной тарификации, экономия электроэнергии в ночные часы</p>
+              </div>
+
+              <div class="options__item">
+                <div class="options__title">Эксплуатация</div>
+                <p>Устройство не требует специальных компетенция для эксплуатации и настройки</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="s-info">
+        <div class="container">
+          <h2 class="info__title">Что такое axiox</h2>
+          <div class="info">
+            <div class="row">
+              <div class="col-md-5">
+                <p>Единственный электросетевой компьютер для диагностики, приема и распределения электрической энергии и обеспечения информационного обмена для управления, регулирования и защиты электросети и подключенных к ней устройств</p>
+                <ul class="info__list">
+                  <li><b>Удаленное управление</b><br><span>Программно пользовательское приложение</span></li>
+                  <li><b>Масштабирование</b><br><span>Масштабирование без дооснащение</span></li>
+                  <li><b>Производство</b><br><span>Устройство промышленного производства.</span><br><span>Тестировано. Сертифицировано.</span></li>
+                </ul>
+                <a href="#">Подробнее ></a>
+              </div>
+              <div class="col-md-7">
+                <img src="img/schema.png" alt="Схема">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="s-intel">
+        <div class="container">
+          <h2 class="title-center">Интеллектуальный учет электроэнергии</h2>
+          <div class="intel">
+            <div class="choice">
+              <h3>axiox</h3>
+              <p>для технического учета и коммерческого учета</p>
+              <div class="row">
+                <div class="col-md-3">
+                  <img src="img/intel/1.svg" alt="Формирует статистику потребления">
+                  <b>Формирует статистику потребления</b>
+                  <p>Статистика потребления видна как по предприятию в целом, так и по цехам. А если настроить смены, то можно получить статистику потребления по каждой</p>
+                </div>
+                <div class="col-md-3">
+                  <img src="img/intel/2.svg" alt="Контролирует качество электроэнергии">
+                  <b>Контролирует качество электроэнергии</b>
+                  <p>Программа собирает со счетчиков информацию о нарушении ГОСТа по качеству электроэнергии. При отклонении показателей качества можно вывести акт со всеми нарушениями</p>
+                </div>
+                <div class="col-md-3">
+                  <img src="img/intel/3.svg" alt="Оповещает об аварийных ситуациях">
+                  <b>Оповещает об аварийных ситуациях</b>
+                  <p>Система предупреждает о выходе за пределы значений тока, напряжения или мощности. Оповещения приходят на электронную почту или в мобильное приложение</p>
+                </div>
+                <div class="col-md-3">
+                  <img src="img/intel/4.svg" alt="Формирует почасовые отчеты">
+                  <b>Формирует почасовые отчеты</b>
+                  <p>Автоматически отправляет почасовки поставщикам и фиксирует факт их получения. Поддерживает форматы отчетов всех гарантирующих поставщиков России</p>
+                </div>
+              </div>
+            </div>
+            <div class="choice choice--black">
+              <h3>axiox</h3>
+              <p>для коммерческого учета электроэнергии</p>
+              <div class="row">
+                <div class="col-md-3">
+                  <img src="img/intel/4.svg" alt="Формирует почасовые отчеты">
+                  <b>Формирует почасовые отчеты</b>
+                  <p>Автоматически отправляет почасовки поставщикам и фиксирует факт их получения. Поддерживает форматы отчетов всех гарантирующих поставщиков России</p>
+                </div>
+                <div class="col-md-3">
+                  <img src="img/intel/5.svg" alt="Показывает стоимость электроэнергии">
+                  <b>Показывает стоимость электроэнергии</b>
+                  <p>В любой точке России. Тарифные параметры обновляются ежемесячно по всем регионам РФ. Нужно просто указать тарифную группу, а стоимость посчитает программа</p>
+                </div>
+                <div class="col-md-3">
+                  <img src="img/intel/6.svg" alt="Снижает затраты на электричество до 35%">
+                  <b>Снижает затраты на электричество до 35%</b>
+                  <p>Програма поможет выбрать самый выгодный из шести возможных тарифов на электроэнергию. Расчеты выполняются по накопленной статистике потребления и точны на 100%</p>
+                </div>
+                <div class="col-md-3">
+                  <img src="img/intel/7.svg" alt="Контролирует расход электроэнергии в часы пик">
+                  <b>Контролирует расход электроэнергии в часы пик</b>
+                  <p>Система следит за потреблением в часы дорогой электроэнергии. Если задать максимальную мощность, программа вовремя предупредит о превышении</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+      <section class="s-remote">
+        <div class="container">
+          <h2 class="title-center">Удаленное управления</h2>
+          <div class="remote">
+            <div class="row">
+              <div class="col-md-7">
+                <img src="img/map.png" alt="Удаленное управления">
+                <h3>Карта удаленного управления</h3>
+              </div>
+              <div class="col-md-5">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="remote__slide">
+                        <div class="remote__item">
+                          <div class="remote__title">Стоимость за текущий месяц</div>
+                          <div class="remote__inner">
+                            <div class="remote__count">29 800₽</div>
+                            <img src="img/progress.svg" alt="Диаграмма">
+                          </div>
+                        </div>
+                        <div class="remote__item">
+                          <div class="remote__title">Потребление энергии за текущий месяц</div>
+                          <div class="remote__inner">
+                            <div class="remote__count">5 049квт</div>
+                            <img class="remote__img" src="img/procent.png" alt="Диаграмма">
+                          </div>
+                        </div>
+                      </div>
+                      <h3>Информативные графики</h3>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="remote__slide">
+                        <div class="remote__item">
+                          <div class="remote__title">Стоимость за текущий месяц</div>
+                          <div class="remote__inner">
+                            <div class="remote__count">29 800₽</div>
+                            <img src="img/progress.svg" alt="Диаграмма">
+                          </div>
+                        </div>
+                        <div class="remote__item">
+                          <div class="remote__title">Потребление энергии за текущий месяц</div>
+                          <div class="remote__inner">
+                            <div class="remote__count">5 049квт</div>
+                            <img class="remote__img" src="img/procent.png" alt="Диаграмма">
+                          </div>
+                        </div>
+                      </div>
+                      <h3>Информативные графики</h3>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="remote__slide">
+                        <div class="remote__item">
+                          <div class="remote__title">Стоимость за текущий месяц</div>
+                          <div class="remote__inner">
+                            <div class="remote__count">29 800₽</div>
+                            <img src="img/progress.svg" alt="Диаграмма">
+                          </div>
+                        </div>
+                        <div class="remote__item">
+                          <div class="remote__title">Потребление энергии за текущий месяц</div>
+                          <div class="remote__inner">
+                            <div class="remote__count">5 049квт</div>
+                            <img class="remote__img" src="img/procent.png" alt="Диаграмма">
+                          </div>
+                        </div>
+                      </div>
+                      <h3>Информативные графики</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+      <section class="s-interface">
+        <div class="container">
+          <div class="interface">
+            <div class="row">
+              <div class="col-md-5 index-1">
+                <div class="interface__item">
+                  <h2>Заголовок про мобильный интерфейс</h2>
+                  <p>Статистика потребления видна как по предприятию в целом, так и по цехам. А если настроить смены, то можно получить статистику</p>
+                  <p>Статистика потребления видна как по предприятию в целом, так и по цехам. А если настроить смены, то можно получить статистику потребления по каждой</p>
+                  <div class="interface__info">
+                    <a href="#" download>
+                      <svg width="23" height="27" viewBox="0 0 23 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.6791 7.75773C10.5638 7.75773 8.83744 6.54513 7.01938 6.58895C4.62076 6.61817 2.42075 7.91843 1.18324 9.97839C-1.30705 14.1129 0.541571 20.2198 2.97075 23.58C4.16242 25.2163 5.56798 27.0571 7.43188 26.9986C9.21939 26.9256 9.89161 25.8883 12.0611 25.8883C14.2152 25.8883 14.8264 26.9986 16.7208 26.9548C18.6458 26.9256 19.868 25.2893 21.0444 23.6384C22.4042 21.7392 22.9694 19.8983 23 19.7961C22.9542 19.7815 19.2569 18.4228 19.2111 14.3321C19.1805 10.9134 22.1292 9.27713 22.2667 9.20408C20.5861 6.85193 18.0041 6.58895 17.1028 6.53052C14.75 6.3552 12.7791 7.75773 11.6791 7.75773ZM15.6514 4.30985C16.6444 3.1703 17.3014 1.57784 17.118 0C15.6972 0.0584386 13.9861 0.905798 12.9625 2.04535C12.0458 3.05342 11.2513 4.67509 11.4652 6.22371C13.0388 6.34059 14.6583 5.4494 15.6514 4.30985Z"/>
+                      </svg>
+                      <span>скачать</span>          
+                    </a>
+                    <a href="#" download>
+                      <svg width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.9375 13.375C17.6624 13.375 18.25 12.7874 18.25 12.0625C18.25 11.3376 17.6624 10.75 16.9375 10.75C16.2126 10.75 15.625 11.3376 15.625 12.0625C15.625 12.7874 16.2126 13.375 16.9375 13.375Z"/>
+                        <path d="M9.0625 13.375C9.78737 13.375 10.375 12.7874 10.375 12.0625C10.375 11.3376 9.78737 10.75 9.0625 10.75C8.33763 10.75 7.75 11.3376 7.75 12.0625C7.75 12.7874 8.33763 13.375 9.0625 13.375Z"/>
+                        <path d="M1.625 16V13.4985C1.625 7.21172 6.67305 2.02182 12.9598 2.00007C14.4569 1.99478 15.9404 2.28509 17.3251 2.85436C18.7099 3.42363 19.9686 4.26066 21.0291 5.31745C22.0896 6.37423 22.9311 7.62998 23.5053 9.01268C24.0794 10.3954 24.375 11.8778 24.375 13.375V16C24.375 16.2321 24.2828 16.4546 24.1187 16.6187C23.9546 16.7828 23.7321 16.875 23.5 16.875H2.5C2.26794 16.875 2.04538 16.7828 1.88128 16.6187C1.71719 16.4546 1.625 16.2321 1.625 16Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2.5 1.125L5.89857 4.52357" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M23.5 1.125L20.1207 4.50432" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>        
+                      <span>скачать</span>
+                    </a>
+                  </div>
+                </div>
+                <button type="button" class="Button Button--big">Связаться с нами</button>
+              </div>
+              <div class="col-md-7 index-1">
+                <div class="interface__img">
+                  <img src="img/phones.png" alt="мобильный интерфейс">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__top">
+        <div class="container">
+          <div class="footer__inner">
+            <div class="footer__logo logo">
+              <img src="img/logo.svg" alt="Axiox">
+            </div>
+            <nav class="footer__menu menu">
+              <a href="#">О нас</a>
+              <a href="#">Axiox</a>
+              <a href="#">Статьи</a>
+              <a href="#">Бизнес</a>
+              <a href="#">Поддержка</a>
+              <a href="#">Новости</a>
+              <a href="#">Франшиза</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="footer__body">
+        <div class="container">
+          <div class="footer__links">
+            <a href="#"><span>Privacy Policy</span></a>
+            <div class="copy"><span>Copyright © 2021</span></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+	
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 	<script src="js/scripts.min.js"></script>
 
 </body>
