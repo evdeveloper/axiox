@@ -6,21 +6,17 @@
 
 
 html {
-  font-size: 14px;
   height: 100%;
-  &.is-locked,
-  &.hidden {
-    overflow: hidden;
-  }
 }
 
 body {
   height: 100%;
+  font-size: 14px;
   padding: 0;
   margin: 0;
   font-family: $default-font;
   font-weight: normal;
-  &.is-locked {
+  &.hidden {
     overflow: hidden;
   }
 }
@@ -39,11 +35,23 @@ font-weight: bold;
 h1 {
   font-size: 60px;
   line-height: 74px;
+  @include media(576) {
+    font-size: 50px;
+    line-height: 100%;
+  }
 }
 
 h2 {
   font-size: 40px;
   line-height: 50px;
+  @include media(576) {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  @include media(414) {
+    font-size: 24px;
+    line-height: 30px;
+  }
 }
 
 ul, li {
@@ -76,13 +84,6 @@ main.content { flex: 1 0 auto; overflow: hidden;}
 
 footer { flex: 0 0 auto; }
 
-// .container {
-//   width: 100%;
-//   max-width: 1220px;
-//   margin: 0 auto;
-//   padding: 0 20px
-// }
-
 
 button {
 	border: none;
@@ -91,7 +92,42 @@ button {
 	cursor: pointer;
 }
 
+.overlay {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0, .5);
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  a {
+    color: $black;
+    transition: all .3s;
+    &:not(:last-child) {
+      margin-right: 60px;
+      @include media(1100) {
+        margin-right: 25px;
+      }
+    }
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+
 @import "header/header";
+@import "sandwich/sandwich";
+@import "videoPlayer";
+
 
 
 .Button {
@@ -116,6 +152,9 @@ button {
 .title-center {
   text-align: center;
   margin-bottom: 50px;
+  @include media(576) {
+    margin-bottom: 35px;
+  }
 }
 
 .index-1 {
@@ -123,32 +162,34 @@ button {
 }
 
 
-.menu {
-  display: flex;
-  align-items: center;
-  a {
-    color: $black;
-    transition: all .3s;
-    &:not(:last-child) {
-      margin-right: 60px;
-    }
-    &:hover {
-      color: $blue;
-    }
-  }
-}
+
 
 .s-about {
   padding: 25px 0;
   height: 875px;
   background: url('../img/banner.png') no-repeat;
   background-position: top right;
+  @include media(1100) {
+    background-size: 60%;
+    height: 600px;
+  }
+  @include media(768) {
+    background-size: 0;
+    height: auto
+  }
 }
 
 .about {
   &__col {
     position: relative;
     padding-top: 150px;
+    @include media(1100) {
+      padding-top: 50px;
+    }
+    @include media(768) {
+      padding-top: 25px;
+      padding-bottom: 40px;
+    }
     h1 {
       margin-bottom: 16px;
     }
@@ -157,6 +198,9 @@ button {
     }
     &:first-child {
       max-width: 420px;
+      @include media(768) {
+        max-width: 100%;
+      }
     }
   }
   &__inner {
@@ -167,33 +211,58 @@ button {
     font-size: 30px;
     line-height: 140%;
     margin-bottom: 20px;
+    @include media(576) {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
   }
 }
 
 // Секция solution
 
 .s-solution {
-  padding: 25px 0 70px;
+  padding: 25px 0 40px;
+  @include media(768) {
+    background-color: #f7f7f7;
+  }
 }
 
 .solution {
-  .col-md-3 {
+  &__item {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-bottom: 30px;
+    &:last-child {
+      @include media(576) {
+        margin-bottom: 0;
+      }
+    }
     img {
       @include size(50px);
       margin-bottom: 16px;
+      @include media(1100) {
+        @include size(40px);
+      }
     }
     b {
       font-size: 22px;
       line-height: 120%;
       margin-bottom: 20px;
+      @include media(576) {
+        margin-bottom: 10px;
+      }
+      @include media(414) {
+        font-size: 20px;
+      }
     }
     p {
       font-size: 18px;
       line-height: 120%;
+      @include media(414) {
+        font-size: 16px;
+      }
     }
   }
 }
@@ -206,6 +275,18 @@ button {
   background: url('../img/video-bg.jpg') no-repeat;
   background-position: center;
   background-size: cover;
+  @include media(1100) {
+    height: 500px;
+  }
+  @include media(768) {
+    height: 430px;
+  }
+  @include media(576) {
+    height: 320px;
+  }
+  @include media(320) {
+    height: 220px;
+  }
 }
 
 
@@ -213,6 +294,9 @@ button {
 
 .s-options {
   padding: 80px 0 40px;
+  @include media(1100) {
+    padding-top: 40px;
+  }
 }
 
 .options {
@@ -223,15 +307,44 @@ button {
     border-radius: 30px;
     padding: 40px;
     margin: 0 15px 15px 0;
+    @include media(900) {
+      padding: 30px 20px;
+      text-align: center;
+    }
+    @include media(700) {
+      width: calc(50% - 15px);
+      max-width: calc(50% - 15px);
+    }
+    @include media(576) {
+      padding: 20px 10px;
+    }
+    @include media(414) {
+      width: 100%;
+      max-width: 100%;
+    }
+    &:nth-child(5) {
+      @include media(700) {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
     &.options--blue {
       display: flex;
       justify-content: center;
       align-items: center;
       background-color: $blue;
     }
+    img {
+      @include media(414) {
+        max-width: 140px;
+      }
+    }
     p {
       font-size: 18px;
       line-height: 22px;
+      @include media(900) {
+        font-size: 16px;
+      }
     }
   }
   &__title {
@@ -239,6 +352,10 @@ button {
     line-height: 30px;
     font-weight: bold;
     margin-bottom: 20px;
+    @include media(900) {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
   &__inner {
     display: flex;
@@ -254,6 +371,9 @@ button {
   padding: 110px 0;
   background-color: $black;
   color: $white;
+  @include media(1100) {
+    padding: 50px 0;
+  }
 }
 
 .info {
@@ -261,29 +381,84 @@ button {
     font-size: 60px;
     line-height: 74px;
     margin-bottom: 26px;
+    @include media(1100) {
+      font-size: 50px;
+      line-height: 50px;
+    }
+    @include media(768) {
+      text-align: center;
+    }
+    @include media(576) {
+      font-size: 40px;
+      line-height: 40px;
+    }
+    @include media(414) {
+      font-size: 30px;
+      line-height: 100%;
+      margin-bottom: 20px;
+    }
   }
+  &__item {
+    &:last-child {
+      @include media(768) {
+        display: none;
+      }
+    }
+    
+  }
+  
   p {
     font-weight: bold;
     font-size: 18px;
     line-height: 140%;
     margin-bottom: 30px;
+    @include media(768) {
+      text-align: center;
+    }
+    @include media(576) {
+      font-size: 16px;
+    }
   }
   &__list {
     margin-bottom: 45px;
+    @include media(768) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
     li {
       font-size: 18px;
       line-height: 140%;
+      @include media(768) {
+        width: calc(50% - 20px);
+        max-width: calc(50% - 20px);
+        text-align: center;
+      }
+      @include media(576) {
+        width: 100%;
+        max-width: 100%;
+      }
       span {
         opacity: 0.8;
+        @include media(576) {
+          font-size: 16px;
+        }
       }
       &:not(:last-child) {
         margin-bottom: 30px;
+        @include media(1100) {
+          margin-bottom: 20px;
+        }
       }
     }
     & + a {
       font-weight: bold;
       font-size: 18px;
       color: #0066FF;
+      @include media(768) {
+        display: block;
+        text-align: center;
+      }
     }
   }
 }
@@ -292,6 +467,9 @@ button {
 
 .s-intel {
   padding: 80px 0 40px;
+  @include media(768) {
+    padding: 40px 0;
+  }
 }
 
 .intel {
@@ -307,6 +485,13 @@ button {
   background: #F8F9FA;
   border-radius: 30px;
   text-align: center;
+  @include media(768) {
+    padding: 40px 20px;
+  }
+  @include media(414) {
+    border-radius: 0;
+    margin: 0 -10px;
+  }
   &.choice--black {
     color: $white;
     background-color: $black;
@@ -319,9 +504,12 @@ button {
     & + p {
       font-size: 24px;
       margin-bottom: 80px;
+      @include media(768) {
+        margin-bottom: 40px;
+      }
     }
   }
-  .col-md-3 {
+  &__item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -333,6 +521,9 @@ button {
       font-size: 18px;
       line-height: 140%;
       margin-bottom: 25px;
+      @include media(576) {
+        margin-bottom: 10px;
+      }
     }
     p {
       font-size: 16px;
@@ -356,13 +547,29 @@ button {
     & > div {
       &:first-child {
         position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 30px;
+        }
         h3 {
           position: absolute;
           font-size: 30px;
           line-height: 140%;
           bottom: 30px;
           left: 60px;
+          @include media(576) {
+            font-size: 20px;
+          }
         }
+      }
+    }
+  }
+  &__col {
+    &:not(:last-child) {
+      @include media(1100) {
+        margin-bottom: 24px;
       }
     }
   }
@@ -373,6 +580,15 @@ button {
     &:not(:last-child) {
       margin-bottom: 10px;
     }
+    img {
+      @include media(414) {
+        max-width: 100px;
+      }
+    }
+    @include media(414) {
+      padding: 20px;
+    }
+
   }
   &__slide {
     margin-bottom: 25px;
@@ -381,6 +597,9 @@ button {
       font-size: 26px;
       text-align: center;
       line-height: 140%;
+      @include media(414) {
+       font-size: 22px;
+      }
     }
   }
   &__title {
@@ -393,6 +612,9 @@ button {
     font-weight: bold;
     font-size: 34px;
     line-height: 140%;
+    @include media(414) {
+      font-size: 25px;
+    }
   }
   &__inner {
     display: flex;
@@ -406,17 +628,30 @@ button {
 
 .swiper {
   height: 100%;
+  @include media(414) {
+    margin: 0 -10px;
+  }
 }
 
 .swiper-pagination {
   text-align: right;
   padding-right: 100px;
+  @include media(768) {
+    text-align: center;
+    padding-right: 0;
+  }
 }
 
 .swiper-slide {
   padding: 20px 50px;
   background-color: #F8F9FA;
   border-radius: 30px;
+  @include media(768) {
+    padding: 20px;
+  }
+  @include media(414) {
+    border-radius: 0;
+  }
 }
 
 .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
@@ -435,9 +670,32 @@ button {
 
 .s-interface {
   padding: 100px 0 45px;
+  @include media(768) {
+    padding: 40px 0;
+  }
 }
 
 .interface {
+  .row {
+    @include media(1100) {
+      align-items: center;
+    }
+    div {
+      &:last-child {
+        @include media(768) {
+          display: none;
+        }
+      }
+    }
+  }
+  .Button {
+    @include media(768) {
+      width: 100%;
+      max-width: 220px;
+      margin: auto;
+      display: flex;
+    }
+  }
   &__img {
     margin-top: -60px;
   }
@@ -446,6 +704,7 @@ button {
     z-index: 1;
     padding: 50px;
     margin-bottom: 36px;
+    
     &:before {
       content: '';
       position: absolute;
@@ -456,16 +715,44 @@ button {
       top: 0;
       background-color: #F8F9FA;
       border-radius: 30px;
+      @include media(768) {
+        display: none;
+      }
+    }
+    @include media(768) {
+      background-color: #F8F9FA;
+      border-radius: 30px;
+      padding: 30px;
+      margin-bottom: 20px;
+    }
+    @include media(414) {
+      padding: 30px 20px;
     }
     h2 {
       font-size: 30px;
       line-height: 40px;
       margin-bottom: 25px;
+      @include media(768) {
+        text-align: center;
+      }
+      @include media(414) {
+       font-size: 24px;
+       line-height: 30px;
+       margin-bottom: 20px;
+      }
+      @include media(320) {
+       font-size: 20px;
+       line-height: 24px;
+      }
     }
     p {
       font-size: 18px;
       line-height: 120%;
       margin-bottom: 25px;
+      @include media(768) {
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
     }
     
   }
@@ -516,12 +803,98 @@ button {
   }
 }
 
+// Секция ecology
 
+.s-ecology {
+  padding: 45px 0;
+}
 
+.ecology {
+  background-color: #58A55C;
+  border-radius: 30px;
+  color: $white;
+  font-size: 18px;
+  line-height: 140%;
+  padding: 60px;
+  @include media(768) {
+    padding: 30px;
+  }
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    @include media(414) {
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+    img {
+      @include media(576) {
+        max-width: 80px;
+      }
+      @include media(414) {
+        display: none;
+      }
+    }
+    h2 {
+      font-size: 60px;
+      line-height: 100%;
+      @include media(1100) {
+        font-size: 45px;
+      }
+      @include media(576) {
+        font-size: 35px;
+      }
+      @include media(414) {
+        font-size: 28px;
+        text-align: center;
+      }
+      @include media(320) {
+        font-size: 25px;
+        text-align: center;
+      }
+      span {
+        display: block;
+        @include media(1100) {
+          display: inline-block;
+        }
+      }
+    }
+  }
+  b {
+    display: block;
+    margin-bottom: 15px;
+  }
+}
 
+// Секция questions
 
+.s-questions {
+  padding: 45px 0 100px;
+  @include media(414) {
+    padding: 40px 0;
+  }
+}
 
-
+.questions {
+  text-align: center;
+  h2 {
+    margin-bottom: 36px;
+    @include media(414) {
+      margin-bottom: 20px;
+    }
+  }
+  p {
+    max-width: 470px;
+    font-size: 18px;
+    line-height: 120%;
+    margin: 0 auto 45px;
+    @include media(414) {
+     font-size: 16px;
+     margin-bottom: 25px;
+    }
+  }
+}
 
 
 // Footer
@@ -530,6 +903,9 @@ button {
   &__top {
     background-color: #F8F9FA;
     padding: 35px 0;
+    @include media(1100) {
+      padding: 20px 0;
+    }
   }
   &__logo {
     img {
@@ -540,11 +916,17 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include media(414) {
+      justify-content: center;
+    }
   }
   &__links {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    @include media(414) {
+      justify-content: center;
+    }
     & > * {
       &:not(:last-child) {
         margin-right: 30px;
@@ -560,4 +942,77 @@ button {
   &__body {
     padding: 20px 0;
   }
+  &__menu {
+    @include media(660) {
+      display: none;
+    }
+  }
+}
+
+
+.rtopVideoPlayerWrapper .rtopVideoPlayer .vidControls #fullvideoprogress {
+  background: rgba(255, 255, 255, 0.2);
+  height: 7px;
+  border-radius: 6px;
+}
+
+.rtopVideoPlayerWrapper .rtopVideoPlayer .vidControls #progress {
+  height: 7px;
+  border-radius: 6px;
+  border-right: none;
+}
+
+.rtopVideoPlayerWrapper .rtopVideoPlayer .vidControls #progressholder {
+  max-width: calc(100% - 60px);
+  margin: 0 10px 0 0;
+}
+
+.rtopVideoPlayerWrapper .rtopVideoPlayer .vidControls .controlBtn {
+  display: flex;
+  align-items: center;
+  line-height: 0px;
+}
+
+.rtopVideoPlayerWrapper .rtopVideoPlayer .vidControls #buffered {
+  height: 7px;
+  background: rgba(255,255,255,.1);
+}
+
+.rtopVideoPlayerWrapper .rtopVideoPlayer .vidControls {
+  background: transparent;
+}
+
+.rtopVideoPlayerWrapper .rtopVideoPlayer .rtopVideoHolder video {
+  opacity: 0;
+}
+
+.rtopVideoPlayerWrapper .rtopVideoPlayer .rtopVideoHolder:before {
+  background-color: transparent;
+}
+
+
+.rtopVideoPlayerWrapper .rtopVideoPlayer .rtopVideoHolder.hasFAIcons:after {
+  @include media(768) {
+    font-size: 60px;
+  }
+  @include media(414) {
+    font-size: 45px;
+  }
+}
+
+.rtopVideoPlayerWrapper .rtopVideoPlayer .rtopVideoHolder {
+  @include media(450) {
+    padding-bottom: 70%;
+  }
+  
+}
+
+.rtopVideoPlayerWrapper .rtopVideoPlayer .vidControls #soundControl {
+  max-width: 20px;
+  padding: 0 5px;
+}
+
+.rtopVideoPlayerWrapper .rtopVideoPlayer .vidControls #playPause  {
+  max-width: 40px;
+  padding: 0 5px;
 }

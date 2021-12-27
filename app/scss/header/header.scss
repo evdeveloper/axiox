@@ -1,16 +1,76 @@
+@import "../mixins";
+
 .header {
   width: 100%;
   left: 0;
   top: 0;
-  background-color: $white;
+  background-color: #fff;
   transition: all .3s;
   z-index: 1000;
+  @include media(414) {
+    box-shadow: 0 0 4px 0px #0566ff;
+  }
+  &__menu {
+    a {
+      @include media(1100) {
+        width: 100%;
+        font-size: 20px;
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 25px;
+      }
+    }
+    @include media(1100) {
+      min-width: 400px;
+      background-color: #fff;
+      position: fixed;
+      transition: right .4s ease;
+      flex-direction: column;
+      z-index: 1000;
+      align-items: flex-start;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      padding: 60px 40px 40px;
+      right: -200%;
+      visibility: hidden;
+    }
+    @include media(414) {
+      width: 100%;
+      min-width: 100%;
+    }
+    &.active {
+      @include media(1100) {
+        right: 0;
+        visibility: visible;
+        z-index: 10000;
+      }
+    }
+  }
+  &__logo {
+    img {
+      @include media(414) {
+        max-width: 90px;
+      }
+    }
+  }
   &__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     transition: all .3s;
     padding: 40px 0 30px;
+    @include media(1100) {
+      padding: 20px 0;
+    }
+    .Button {
+      @include media(1100) {
+        margin: 0 40px 0 auto;
+      }
+      @include media(414) {
+        display: none;
+      }
+    }
   }
   &.fixed {
     position: fixed;

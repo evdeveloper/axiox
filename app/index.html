@@ -12,6 +12,7 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
 	<meta name="theme-color" content="#000">
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"crossorigin="anonymous"/>
 	<link rel="stylesheet" href="css/main.min.css">
 
 </head>
@@ -34,6 +35,12 @@
             <a href="#">Франшиза</a>
           </nav>
           <button type="button" class="Button">Связаться с нами</button>
+          <div class="sandwich">
+            <div class="sandwich__line sandwich__line--top"></div>
+            <div class="sandwich__line sandwich__line--middle"></div>
+            <div class="sandwich__line sandwich__line--bottom"></div>
+          </div>
+          <div class="overlay"></div>
         </div>
       </div>
       
@@ -63,22 +70,22 @@
           <h2 class="title-center">Проблемы которые решает axiox</h2>
           <div class="solution">
             <div class="row">
-              <div class="col-md-3">
+              <div class="solution__item col-lg-3 col-md-6 col-sm-6">
                 <img src="img/solution/4.svg" alt="Сложность в получении информации">
                 <b>Сложность в получении информации</b>
                 <p>о состоянии оборудования в режиме реального времени</p>
               </div>
-              <div class="col-md-3">
+              <div class="solution__item col-lg-3 col-md-6 col-sm-6">
                 <img src="img/solution/3.svg" alt="Тестирование оборудования">
                 <b>Тестирование оборудования</b>
                 <p>отсутствие постоянного проверочного тестирования оборудования</p>
               </div>
-              <div class="col-md-3">
+              <div class="solution__item col-lg-3 col-md-6 col-sm-6">
                 <img src="img/solution/2.svg" alt="Сложная коммуникация">
                 <b>Сложная коммуникация</b>
                 <p>между обслуживающей организаций и заказчиком</p>
               </div>
-              <div class="col-md-3">
+              <div class="solution__item col-lg-3 col-md-6 col-sm-6">
                 <img src="img/solution/1.svg" alt="Отсутствие удаленного управления">
                 <b>Отсутствие удаленного управления</b>
                 <p>отсутствие единого ПО удаленного управления электросетью</p>
@@ -88,8 +95,13 @@
         </div>
       </section>
       <section class="s-video">
-        <div class="video">
-
+        <div class="container">
+          <div class="video" >
+            <video src="https://vjs.zencdn.net/v/oceans.mp4?HD" type="video/mp4">
+              <source src="https://vjs.zencdn.net/v/oceans.mp4?HD" type="video/mp4">
+            </video>
+           
+          </div>
         </div>
       </section>
       <section class="s-options">
@@ -150,7 +162,7 @@
           <h2 class="info__title">Что такое axiox</h2>
           <div class="info">
             <div class="row">
-              <div class="col-md-5">
+              <div class="info__item col-md-5">
                 <p>Единственный электросетевой компьютер для диагностики, приема и распределения электрической энергии и обеспечения информационного обмена для управления, регулирования и защиты электросети и подключенных к ней устройств</p>
                 <ul class="info__list">
                   <li><b>Удаленное управление</b><br><span>Программно пользовательское приложение</span></li>
@@ -159,7 +171,7 @@
                 </ul>
                 <a href="#">Подробнее ></a>
               </div>
-              <div class="col-md-7">
+              <div class="info__item col-md-7">
                 <img src="img/schema.png" alt="Схема">
               </div>
             </div>
@@ -174,22 +186,22 @@
               <h3>axiox</h3>
               <p>для технического учета и коммерческого учета</p>
               <div class="row">
-                <div class="col-md-3">
+                <div class="choice__item col-lg-3 col-md-6 col-sm-6 mb-4">
                   <img src="img/intel/1.svg" alt="Формирует статистику потребления">
                   <b>Формирует статистику потребления</b>
                   <p>Статистика потребления видна как по предприятию в целом, так и по цехам. А если настроить смены, то можно получить статистику потребления по каждой</p>
                 </div>
-                <div class="col-md-3">
+                <div class="choice__item col-lg-3 col-md-6 col-sm-6 mb-4">
                   <img src="img/intel/2.svg" alt="Контролирует качество электроэнергии">
                   <b>Контролирует качество электроэнергии</b>
                   <p>Программа собирает со счетчиков информацию о нарушении ГОСТа по качеству электроэнергии. При отклонении показателей качества можно вывести акт со всеми нарушениями</p>
                 </div>
-                <div class="col-md-3">
+                <div class="choice__item col-lg-3 col-md-6 col-sm-6 mb-4">
                   <img src="img/intel/3.svg" alt="Оповещает об аварийных ситуациях">
                   <b>Оповещает об аварийных ситуациях</b>
                   <p>Система предупреждает о выходе за пределы значений тока, напряжения или мощности. Оповещения приходят на электронную почту или в мобильное приложение</p>
                 </div>
-                <div class="col-md-3">
+                <div class="choice__item col-lg-3 col-md-6 col-sm-6 mb-4">
                   <img src="img/intel/4.svg" alt="Формирует почасовые отчеты">
                   <b>Формирует почасовые отчеты</b>
                   <p>Автоматически отправляет почасовки поставщикам и фиксирует факт их получения. Поддерживает форматы отчетов всех гарантирующих поставщиков России</p>
@@ -200,22 +212,22 @@
               <h3>axiox</h3>
               <p>для коммерческого учета электроэнергии</p>
               <div class="row">
-                <div class="col-md-3">
+                <div class="choice__item col-lg-3 col-md-6 col-sm-6 mb-4">
                   <img src="img/intel/4.svg" alt="Формирует почасовые отчеты">
                   <b>Формирует почасовые отчеты</b>
                   <p>Автоматически отправляет почасовки поставщикам и фиксирует факт их получения. Поддерживает форматы отчетов всех гарантирующих поставщиков России</p>
                 </div>
-                <div class="col-md-3">
+                <div class="choice__item col-lg-3 col-md-6 col-sm-6 mb-4">
                   <img src="img/intel/5.svg" alt="Показывает стоимость электроэнергии">
                   <b>Показывает стоимость электроэнергии</b>
                   <p>В любой точке России. Тарифные параметры обновляются ежемесячно по всем регионам РФ. Нужно просто указать тарифную группу, а стоимость посчитает программа</p>
                 </div>
-                <div class="col-md-3">
+                <div class="choice__item col-lg-3 col-md-6 col-sm-6 mb-4">
                   <img src="img/intel/6.svg" alt="Снижает затраты на электричество до 35%">
                   <b>Снижает затраты на электричество до 35%</b>
                   <p>Програма поможет выбрать самый выгодный из шести возможных тарифов на электроэнергию. Расчеты выполняются по накопленной статистике потребления и точны на 100%</p>
                 </div>
-                <div class="col-md-3">
+                <div class="choice__item col-lg-3 col-md-6 col-sm-6 mb-4">
                   <img src="img/intel/7.svg" alt="Контролирует расход электроэнергии в часы пик">
                   <b>Контролирует расход электроэнергии в часы пик</b>
                   <p>Система следит за потреблением в часы дорогой электроэнергии. Если задать максимальную мощность, программа вовремя предупредит о превышении</p>
@@ -231,11 +243,11 @@
           <h2 class="title-center">Удаленное управления</h2>
           <div class="remote">
             <div class="row">
-              <div class="col-md-7">
+              <div class="remote__col col-lg-7 col-md-12">
                 <img src="img/map.png" alt="Удаленное управления">
                 <h3>Карта удаленного управления</h3>
               </div>
-              <div class="col-md-5">
+              <div class="remote__col col-lg-5 col-md-12">
                 <div class="swiper">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -340,6 +352,29 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section class="s-ecology">
+        <div class="container">
+          <div class="ecology">
+            <div class="ecology__top">
+              <h2>Забота <span>об экологии</span></h2>
+              <img src="img/eco.svg" alt="Забота об экологии">
+            </div>
+            <b>Одним из лучших промышленных решений по энергоэффективности является мониторинг энергопотребления</b>
+            <p>В настоящее время производители сталкиваются с проблемой перехода к индустрии 4.0, где требуется, чтобы они стали устойчивыми, эффективными и инновационными по всем производственным направлениям.
+              Мониторинг электроэнергии с помощью датчиков промышленного Интернета вещей (IIoT) анализирует каждую фазу производственного процесса, показывает фактические показатели энергопотребления, выделяет болевые точки потребления, одновременно предпринимая действия по оптимизации затрат, энергопотребления и фактического воздействия CO2. 
+              AXIOX - оборудование для сбора и передачи данных для отслеживания пикового спроса, вспомогательных средств учета, промышленного оборудования и создания пользовательских оповещений.</p>
+          </div>
+        </div>
+      </section>
+      <section class="s-questions">
+        <div class="container">
+          <div class="questions">
+            <h2 class="title-center">Остались вопросы?</h2>
+            <p>Свяжитесь с нами через нашу форму и наш менеджер обязательно ответит на все ваши вопросы.</p>
+            <button type="button" class="Button Button--big">Связаться с нами</button>
           </div>
         </div>
       </section>
